@@ -11,6 +11,8 @@
   <!-- icons -->
   <link href="favicon.ico" rel="shortcut icon">
 
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+
   <!-- css + javascript -->
   <link rel="stylesheet" href="css/main.css" media="all">
 
@@ -32,7 +34,9 @@
         <div class="header-logo col-md-6">
           <img src="img/logo.png" alt="" title="">
           <!-- http://easyautocomplete.com/ -->
-          <input id="city" value="Нижний Новгород" />
+          <span class="header-logo--form">
+            <input id="city" value="Нижний Новгород" />
+          </span>
         </div><!-- /logo -->
 
         <nav class="header-nav col-md-7" role="navigation">
@@ -51,6 +55,7 @@
         </div><!-- /.col-md-2 header-ico -->
 
         <div class="col-md-1 header-account">
+          <!-- add class "header-account--avatar-a" to hide arrow  -->
           <span class="header-account--avatar" style="background-image: url(../img/content/noavatar.jpg);">
           </span>
         </div><!-- /.col-md-1 header-account -->
@@ -62,7 +67,7 @@
   <div class="header-after">
     <div class="container">
       <div class="row">
-        <h6 class="col-md-8 col-md-offset-4">Get4do - надёжный городской помощник поиск мастеров, компаний и полезной информации</h6>
+        <h6 class="col-md-8 col-md-offset-4">Get4do - надёжный городской помощник <span>поиск мастеров, компаний и полезной информации</span></h6>
       </div><!-- /.row -->
     </div><!-- /.container -->
   </div><!-- /.header-after -->

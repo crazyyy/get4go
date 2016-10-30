@@ -72,6 +72,19 @@ picture {
   max-width: 100%;
   margin: 0;
 }
+.btn {
+  font-size: 14px;
+  font-weight: 300;
+
+  border-radius: $base-border-radius;
+  &.btn-blue {
+    background-color: $blue;
+    &:hover {
+      background-color: darken($blue, 10%);
+      box-shadow: $base-box-shadow;
+    }
+  }
+}
 .wrapper {
   position: relative;
 
@@ -91,10 +104,123 @@ picture {
 
 header {
   height: 60px;
-  .logo {
-    display: block;
+  .header-logo {
+    padding-top: 12px;
     img {
       max-width: 100%;
+      margin-right: 10px;
+    }
+    .header-logo--form {
+      display: inline-block;
+
+      width: 175px;
+      height: 30px;
+      input {
+        width: 100%;
+        height: 100%;
+        padding-right: 7px;
+        padding-left: 7px;
+
+        color: $blue;
+        border: 1px solid $gray;
+      }
+    }
+  }
+  .header-nav {
+    padding-top: 20px;
+    .headnav {
+      @extend .justify-child;
+      li {
+        a {
+          font-size: 14px;
+          font-weight: 300;
+
+          text-transform: uppercase;
+
+          color: $blue;
+          border-bottom: 2px dotted transparent;
+        }
+        &:hover {
+          a {
+            text-decoration: none;
+
+            border-bottom: 2px dotted $orange;
+          }
+        }
+      }
+    }
+  }
+  .header-ico {
+    padding-top: 23px;
+
+    @extend .justify-child;
+    .header-ico--ring,
+    .header-ico--mail,
+    .header-ico--book {
+      display: inline-block;
+
+      width: 16px;
+      height: 16px;
+
+      cursor: pointer;
+
+      background-color: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .header-ico--ring {
+      background-image: url(../img/ico/header-ico--ring.png);
+      &:hover {
+        background-image: url(../img/ico/header-ico--ring-h.png);
+      }
+    }
+    .header-ico--mail {
+      background-image: url(../img/ico/header-ico--mail.png);
+      &:hover {
+        background-image: url(../img/ico/header-ico--mail-h.png);
+      }
+    }
+    .header-ico--book {
+      background-image: url(../img/ico/header-ico--book.png);
+      &:hover {
+        background-image: url(../img/ico/header-ico--book-h.png);
+      }
+    }
+  }
+  .header-account {
+    padding-top: 15px;
+    .header-account--avatar {
+      position: relative;
+
+      display: block;
+
+      width: 34px;
+      height: 34px;
+
+      cursor: pointer;
+
+      border: 1px solid #e5eaee;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      &:after {
+        position: absolute;
+        top: 50%;
+        right: -15px;
+
+        margin-top: -3px;
+
+        @extend .dblock;
+        @include triangle(8px 7px, $blue, down);
+      }
+      &.header-account--avatar-a {
+        &:after {
+          display: none;
+        }
+      }
+      &:hover {
+        box-shadow: $base-box-shadow;
+      }
     }
   }
 }
@@ -106,19 +232,119 @@ nav {
       display: inline-block;
     }
   }
-  .headnav {
-    font-size: 100%;
-  }
 }
 .header-after {
-  height: 95px;
+  height: 96px;
+  padding-top: 25px;
 
-  background-color: $gray-light;
+  background-color: $gray;
+  background-image: url(../img/bg/header-after.png);
+  background-position: top;
+
+  header-afterbackground-repeat: repeat-x;
   h6 {
     font-size: 18px;
     font-weight: 300;
 
     text-align: center;
+    span {
+      display: block;
+    }
+  }
+}
+.home-search {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  background-color: $orange;
+  .home-search--autocomplete {
+    font-size: 14px;
+    font-weight: 300;
+
+    position: relative;
+
+    margin-bottom: 0;
+    padding-top: 15px;
+    &:after {
+      position: absolute;
+      top: 0;
+      right: -30px;
+      bottom: 0;
+
+      width: 1px;
+
+      background-color: #fff;
+
+      @extend .dblock;
+    }
+    h6 {
+      font-size: 34px;
+      font-weight: 300;
+
+      margin-bottom: 5px;
+
+      text-transform: uppercase;
+    }
+    form {
+      position: relative;
+
+      width: 100%;
+      height: 50px;
+      margin-bottom: 12px;
+      &:after {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 150px;
+
+        background-color: $orange;
+
+        @extend .dblock;
+      }
+      input {
+        font-size: 14px;
+        font-weight: 300;
+
+        width: 100%;
+        height: 100%;
+      }
+      button {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 145px;
+      }
+    }
+  }
+  .home-search--how {
+    .home-search--how-button {
+      width: 220px;
+      height: 145px;
+      padding-top: 95px;
+
+      border-radius: $base-border-radius;
+      background-color: $blue;
+      background-image: url(../img/bg/home-search--how-button.png);
+      background-repeat: no-repeat;
+      background-position: center 25px;
+      span {
+        font-size: 14px;
+        font-weight: 300;
+
+        text-align: center;
+
+        color: #fff;
+      }
+      &:hover {
+        background-color: darken($blue, 10%);
+      }
+    }
   }
 }
 section {
@@ -137,7 +363,7 @@ footer {
   /* margin: $footer_margin auto 0; */
   margin: 0 auto;
 
-  background-color: $gray-light;
+  background-color: $gray;
 }
 
 
