@@ -90,7 +90,7 @@ picture {
 }
 
 header {
-  background-color: $gray-light;
+  height: 60px;
   .logo {
     display: block;
     img {
@@ -110,7 +110,17 @@ nav {
     font-size: 100%;
   }
 }
+.header-after {
+  height: 95px;
 
+  background-color: $gray-light;
+  h6 {
+    font-size: 18px;
+    font-weight: 300;
+
+    text-align: center;
+  }
+}
 section {
   padding: 0 0 $footer;
 }
@@ -123,8 +133,9 @@ article {
 
 
 footer {
-  height: $footer;
-  margin: $footer_margin auto 0;
+  height: auto;
+  /* margin: $footer_margin auto 0; */
+  margin: 0 auto;
 
   background-color: $gray-light;
 }
