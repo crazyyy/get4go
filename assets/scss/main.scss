@@ -162,9 +162,7 @@ header {
         }
         &:hover {
           a {
-            text-decoration: none;
-
-            border-bottom: 2px dotted $orange;
+text-decoration: underline;
           }
         }
       }
