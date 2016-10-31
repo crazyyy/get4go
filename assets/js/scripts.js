@@ -45,7 +45,7 @@ $(document).ready(function() {
     // find sum of neutral and negative reviews for circle chart
     var sumPoints = feedbackPositive + feedbackNeutral + feedbackNegative;
     var posPoints = feedbackPositive + feedbackNeutral;
-    var sumPointsPerc = parseFloat(((posPoints / sumPoints) * 100).toFixed(2));
+    var sumPointsPerc = parseFloat(((posPoints / sumPoints) * 100).toFixed(1));
 
     //** circles https://github.com/lugolabs/circles */
     var myCircle = Circles.create({
@@ -68,6 +68,7 @@ $(document).ready(function() {
     });
 
   });
+
 });
 // autocomplete
 $(function() {

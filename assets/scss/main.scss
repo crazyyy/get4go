@@ -7,6 +7,9 @@
 @import 'import/mixin';
 @import 'import/wordpress';
 
+// http://sorgalla.com/lity/
+@import 'lity';
+
 @import 'easy-autocomplete/easy-autocomplete';
 // @import 'easy-autocomplete/easy-autocomplete.themes';
 
@@ -86,7 +89,7 @@ picture {
     background-color: $blue;
     &:hover {
       background-color: darken($blue, 10%);
-      box-shadow: $base-box-shadow;
+      // box-shadow: $base-box-shadow;
     }
   }
   &.btn-orange {
@@ -98,10 +101,11 @@ picture {
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.75);
     &:hover {
       background-color: darken($orange, 10%);
-      box-shadow: 0 2px 6px 0 rgba(0,0,0,.75);
+      // box-shadow: 0 2px 6px 0 rgba(0,0,0,.75);
     }
   }
   &:hover {
+    transform: scale(1.01);
     text-decoration: none;
   }
 }
@@ -113,6 +117,7 @@ picture {
   height: 100%;
   min-height: 100%;
   margin: 0 auto;
+  padding-top: 60px;
 
   @extend .clearfix;
 }
@@ -123,7 +128,16 @@ picture {
 }
 
 header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+
   height: 60px;
+
+  background-color: #fff;
+  box-shadow: 0 1px 9px 0 rgba(0, 1, 1, .35);
   .header-logo {
     padding-top: 12px;
     img {
@@ -162,7 +176,7 @@ header {
         }
         &:hover {
           a {
-text-decoration: underline;
+            text-decoration: underline;
           }
         }
       }
@@ -256,7 +270,6 @@ nav {
   padding-top: 25px;
 
   background-color: $gray;
-  background-image: url(../img/bg/header-after.png);
   background-position: top;
 
   header-afterbackground-repeat: repeat-x;
@@ -342,9 +355,13 @@ nav {
   }
   .home-search--how {
     .home-search--how-button {
+      display: block;
+
       width: 220px;
       height: 145px;
       padding-top: 95px;
+
+      text-align: center;
 
       border-radius: $base-border-radius;
       background-color: $blue;
@@ -360,6 +377,8 @@ nav {
         color: #fff;
       }
       &:hover {
+        text-decoration: none;
+
         background-color: darken($blue, 10%);
       }
     }
@@ -410,8 +429,14 @@ nav {
       .popular-cats--item-c {
         text-decoration: none;
 
-        border-color: $orange;
-        box-shadow: $base-box-shadow;
+        border: 1px solid #f5b635;
+        box-shadow: inset 0 0 0 1px #f5b635;
+        span {
+          transform: scale(1.1);
+        }
+        h6 {
+          transform: scale(1.1);
+        }
       }
     }
   }
@@ -465,12 +490,23 @@ nav {
   .topg--item {
     height: 150px;
     margin-bottom: 25px;
-    padding: 15px 10px 15px;
+    padding: 15px 6px 15px;
 
+    transition: all .2s;
+
+    border: 2px solid #fff;
     border-radius: $base-border-radius;
     background-color: #fff;
 
     @extend .clearfix;
+    a {
+      color: $blue;
+    }
+    &:hover {
+      transform: scale(.98);
+
+      border: 2px solid $orange;
+    }
   }
   .topg--item-avatar {
     float: left;
@@ -694,7 +730,15 @@ nav {
     margin-bottom: 25px;
     padding: 20px 20px 20px 75px;
 
+    transition: all .5s;
+
+    border: 3px solid #fff;
     background-color: #fff;
+    a {
+      text-decoration: none;
+
+      color: $blue;
+    }
     .whatoffer--avatar {
       position: absolute;
       top: 0;
@@ -704,6 +748,8 @@ nav {
       display: block;
 
       width: 75px;
+
+      cursor: pointer;
 
       background-repeat: no-repeat;
       background-position: center;
@@ -728,6 +774,16 @@ nav {
       padding-right: 15px;
 
       text-align: right;
+    }
+    &:hover {
+      transform: scale(.98);
+
+      border: 3px solid $orange;
+      a {
+        text-decoration: none;
+
+        color: $blue;
+      }
     }
   }
   .whatoffer--more {
@@ -767,9 +823,12 @@ nav {
   .create-account--href {
     text-align: center;
     a {
+      line-height: 1.5;
+
       display: inline-block;
 
       width: 250px;
+      height: 45px;
       margin: 0 auto;
     }
   }
@@ -818,14 +877,16 @@ nav {
       padding-top: 16px;
       padding-bottom: 16px;
 
+      transition: all .5;
+
       color: $blue;
       border-radius: $base-border-radius;
       background-color: $gray;
       box-shadow: 0 2px 3px 0 rgba(0,0,0,.75);
       &:hover {
+        transform: scale(1.01);
         text-decoration: none;
-
-        box-shadow: 0 2px 6px 0 rgba(0,0,0,.75);
+        // box-shadow: 0 2px 6px 0 rgba(0,0,0,.75);
       }
     }
   }
