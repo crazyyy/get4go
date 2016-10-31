@@ -7,6 +7,9 @@
 @import 'import/mixin';
 @import 'import/wordpress';
 
+@import 'easy-autocomplete/easy-autocomplete';
+// @import 'easy-autocomplete/easy-autocomplete.themes';
+
 @import 'grid/bootstrap';
 /* @import 'grid/bootstrap-theme'; */
 
@@ -529,6 +532,77 @@ nav {
 
     width: 135px;
     height: 90px;
+
+    @extend .clearfix;
+    .topg--item-circle {
+      float: left;
+
+      width: 46px;
+      height: 46px;
+      margin-bottom: 10px;
+    }
+    .topg--item-chart {
+      position: relative;
+
+      float: left;
+
+      width: 22px;
+      height: 46px;
+      margin-right: 30px;
+      margin-bottom: 10px;
+      margin-left: 20px;
+      span {
+        position: absolute;
+        bottom: 0;
+
+        display: block;
+
+        width: 4px;
+      }
+      .topg--item-chart-p {
+        left: 0;
+
+        height: 50%;
+
+        background-color: $green;
+      }
+      .topg--item-chart-n {
+        left: 8px;
+
+        height: 25%;
+
+        background-color: $orange;
+      }
+      .topg--item-chart-m {
+        right: 0;
+
+        height: 75%;
+
+        background-color: $red;
+      }
+    }
+    .topg--item-reviews {
+      font-size: 13px;
+
+      float: left;
+
+      width: 100%;
+      padding-top: 10px;
+
+      text-align: center;
+
+      color: #93a2b3;
+      border-top: 1px solid #93a2b3;
+      .topg--item-reviews-p {
+        color: $green;
+      }
+      .topg--item-reviews-n {
+        color: #93a2b3;
+      }
+      .topg--item-reviews-m {
+        color: $red;
+      }
+    }
   }
   .topg--item-tags {
     float: left;
