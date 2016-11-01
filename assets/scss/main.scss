@@ -163,7 +163,21 @@ header {
     padding-top: 20px;
     .headnav {
       @extend .justify-child;
+
       li {
+        &:last-child {
+                position: relative;
+      &:after {
+        @extend .dblock;
+        height: 30px;
+        background-color: #e4eaed;
+
+        width: 1px;
+        position: absolute;
+        top: -5px;
+        right: -35px;
+      }
+        }
         a {
           font-size: 14px;
           font-weight: 300;
