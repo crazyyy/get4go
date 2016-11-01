@@ -32,6 +32,9 @@ body {
   background-color: $base-background-color;
 
   -webkit-font-smoothing: antialiased;
+  &.category-l {
+    background-color: $gray;
+  }
 }
 h1,
 h2,
@@ -80,11 +83,13 @@ picture {
 }
 .btn {
   font-size: 14px;
-font-weight: normal;
+  font-weight: normal;
+
   text-align: center;
 
   border-radius: $base-border-radius;
   &.btn-blue {
+    border-bottom: 2px solid #0a170b;
     background-color: $blue;
     &:hover {
       background-color: darken($blue, 10%);
@@ -96,8 +101,9 @@ font-weight: normal;
     font-weight: normal;
 
     color: $blue;
+    border-bottom: 2px solid #b78727;
     background-color: $orange;
-    box-shadow: 0 2px 3px 0 rgba(0,0,0,.75);
+    // box-shadow: 0 2px 3px 0 rgba(0,0,0,.75);
     &:hover {
       background-color: darken($orange, 10%);
       // box-shadow: 0 2px 6px 0 rgba(0,0,0,.75);
@@ -163,20 +169,21 @@ header {
     padding-top: 20px;
     .headnav {
       @extend .justify-child;
-
       li {
         &:last-child {
-                position: relative;
-      &:after {
-        @extend .dblock;
-        height: 30px;
-        background-color: #e4eaed;
+          position: relative;
+          &:after {
+            position: absolute;
+            top: -5px;
+            right: -35px;
 
-        width: 1px;
-        position: absolute;
-        top: -5px;
-        right: -35px;
-      }
+            width: 1px;
+            height: 30px;
+
+            background-color: #e4eaed;
+
+            @extend .dblock;
+          }
         }
         a {
           font-size: 14px;
@@ -287,8 +294,6 @@ nav {
 
   background-color: $gray;
   background-position: top;
-
-
   h6 {
     font-size: 18px;
     font-weight: 300;
@@ -320,7 +325,7 @@ nav {
 
       width: 1px;
 
-      background-color: #fff;
+      background-color: #f6ce7d;
 
       @extend .dblock;
     }
@@ -362,11 +367,11 @@ nav {
         position: absolute;
         z-index: 2;
         top: 0;
-          margin-right: 15px;
         right: 0;
         bottom: 0;
 
         width: 145px;
+        margin-right: 15px;
       }
     }
   }
@@ -459,7 +464,7 @@ nav {
   }
   .popular-cats--more {
     margin-bottom: 65px;
-padding-top: 28px;
+    padding-top: 28px;
     .btn {
       display: block;
 
@@ -504,26 +509,21 @@ padding-top: 28px;
       background-color: $blue;
     }
   }
-  .topg--item {
-    height: 150px;
-    margin-bottom: 25px;
-    padding: 15px 6px 15px;
+}
+.topg--item {
+  height: 150px;
+  margin-bottom: 25px;
+  padding: 15px 6px 15px;
 
-    transition: all .2s;
+  transition: all .2s;
 
-    border: 2px solid #fff;
-    border-radius: $base-border-radius;
-    background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: $base-border-radius;
+  background-color: #fff;
 
-    @extend .clearfix;
-    a {
-      color: $blue;
-    }
-    &:hover {
-      transform: scale(.98);
-
-      border: 2px solid $orange;
-    }
+  @extend .clearfix;
+  a {
+    color: $blue;
   }
   .topg--item-avatar {
     float: left;
@@ -540,9 +540,10 @@ padding-top: 28px;
     font-weight: normal;
 
     float: left;
-padding-left: 5px;
+
     width: 229px;
     height: 90px;
+    padding-left: 5px;
     .topg--item-nname {
       color: $gray-dark;
     }
@@ -685,7 +686,220 @@ padding-left: 5px;
     font-size: 16px;
     font-weight: normal;
 
+    text-align: center;
+    a {
+      color: $blue;
+      &:hover {
+        text-decoration: none;
 
+        border-bottom: 2px solid $orange;
+      }
+    }
+  }
+  &:hover {
+    transform: scale(.98);
+
+    border: 2px solid $orange;
+  }
+}
+.topg--item-lister {
+  height: 170px;
+  margin: 0;
+  padding: 20px;
+
+  border: 1px solid $gray-light;
+  border-top: 0;
+  border-radius: 0;
+  background-color: #fff;
+
+  @extend .clearfix;
+  a {
+    color: $blue;
+  }
+  .topg--item-lister-d {
+    float: left;
+
+    width: 365px;
+    min-height: 130px;
+    .topg--item-avatar {
+      float: left;
+
+      width: 65px;
+      height: 65px;
+      margin: 0 15px 65px 0;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+  .topg--item-name {
+    font-size: 16px;
+    font-weight: normal;
+
+    float: left;
+
+    width: 285px;
+    height: 90px;
+    padding-left: 5px;
+    .topg--item-nname {
+      font-size: 12px;
+
+      display: block;
+
+      padding-top: 8px;
+
+      color: $gray-dark;
+    }
+    .topg--item-available {
+      font-size: 12px;
+
+      display: block;
+
+      padding-top: 8px;
+
+      color: $gray-dark;
+    }
+    .topg--item-status {
+      display: block;
+
+      padding-top: 10px;
+      span {
+        font-size: 12px;
+        font-weight: normal;
+
+        display: inline-block;
+
+        padding: 4px 15px;
+
+        color: #fff;
+        border-radius: $base-border-radius;
+        background-color: $red;
+      }
+      &.topg--item-status-a {
+        span {
+          background-color: $green;
+        }
+      }
+    }
+  }
+  .topg--item-tags {
+    float: left;
+
+    width: 285px;
+    span,
+    a {
+      font-size: 12px;
+
+      display: inline-block;
+
+      margin-right: 10px;
+      padding: 3px 4px;
+
+      color: $blue;
+      background-color: $gray;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .topg--item-rating {
+    position: relative;
+
+    float: right;
+
+    width: 230px;
+    min-height: 130px;
+
+    @extend .clearfix;
+    .topg--item-price {
+      font-size: 18px;
+      font-weight: normal;
+
+      float: left;
+
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .topg--item-chart {
+      position: relative;
+
+      float: left;
+
+      width: 22px;
+      height: 50px;
+
+      margin-bottom: 10px;
+
+      span {
+        position: absolute;
+        bottom: 0;
+
+        display: block;
+
+        width: 4px;
+      }
+      .topg--item-circle {
+        float: left;
+
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+      .topg--item-chart-p {
+        left: 0;
+
+        height: 0;
+
+        transition: all 2s;
+
+        background-color: $green;
+      }
+      .topg--item-chart-n {
+        left: 8px;
+
+        height: 0;
+
+        transition: all 1s;
+
+        background-color: $orange;
+      }
+      .topg--item-chart-m {
+        right: 0;
+
+        height: 0;
+
+        transition: all .5s;
+
+        background-color: $red;
+      }
+    }
+    .topg--item-reviews {
+      font-size: 13px;
+
+      float: right;
+
+      width: 100px;
+      height: 50px;
+
+      text-align: center;
+
+      color: #93a2b3;
+      border-top: 1px solid #93a2b3;
+      .topg--item-reviews-p {
+        color: $green;
+      }
+      .topg--item-reviews-n {
+        color: #93a2b3;
+      }
+      .topg--item-reviews-m {
+        color: $red;
+      }
+    }
+  }
+  .topg--item-more {
+    font-size: 16px;
+    font-weight: normal;
 
     text-align: center;
     a {
@@ -697,7 +911,12 @@ padding-left: 5px;
       }
     }
   }
+  &:hover {
+    // transform: scale(.98);
+    border: 2px solid $orange;
+  }
 }
+
 .addg {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -721,6 +940,9 @@ padding-left: 5px;
   .addg--href {
     .btn {
       width: 250px;
+      height: 45px;
+
+      border-bottom: 2px solid #0a170b;
     }
   }
 }
@@ -785,8 +1007,9 @@ padding-left: 5px;
 
       position: absolute;
       top: 50%;
-  right: -12px;
-  margin-top: -22px;
+      right: -12px;
+
+      margin-top: -22px;
       padding-right: 15px;
 
       text-align: right;
@@ -828,7 +1051,7 @@ padding-left: 5px;
     font-size: 32px;
     font-weight: 300;
 
-    margin-bottom:15px;
+    margin-bottom: 15px;
   }
   .create-account--subtitle {
     font-size: 18px;
@@ -949,6 +1172,42 @@ padding-left: 5px;
     }
   }
 }
+.searchsort {
+  padding: 25px 20px 50px;
+
+  border: 1px solid $gray-light;
+  border-radius: $base-border-radius $base-border-radius 0 0;
+  background-color: #fff;
+
+  @extend .clearfix;
+  form,
+  select {
+    height: 40px;
+  }
+  form {
+    float: left;
+
+    width: 300px;
+    input {
+      height: 100%;
+
+      box-shadow: none;
+    }
+  }
+  input,
+  select {
+    color: $gray-light;
+    border-radius: $base-border-radius;
+  }
+  select {
+    float: right;
+
+    width: 140px;
+
+    color: $blue;
+  }
+}
+
 section {
   padding: 0 0 $footer;
 }

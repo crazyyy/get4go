@@ -23,6 +23,7 @@ if (typeof jQuery === 'undefined') {
 // Place any jQuery/helper plugins in here.
 // charts on main page
 $(document).ready(function() {
+  // rating for main page
   $('.topg--item-rating').each(function(index, el) {
 
     var id = $(this).find('.topg--item-circle').attr('id');
@@ -66,7 +67,6 @@ $(document).ready(function() {
       styleWrapper: true,
       styleText: true
     });
-
   });
 
 });
