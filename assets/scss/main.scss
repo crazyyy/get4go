@@ -80,8 +80,7 @@ picture {
 }
 .btn {
   font-size: 14px;
-  font-weight: 300;
-
+font-weight: normal;
   text-align: center;
 
   border-radius: $base-border-radius;
@@ -199,11 +198,11 @@ header {
 
       background-color: cover;
       background-repeat: no-repeat;
-background-position: center top;
+      background-position: center top;
     }
     .header-ico--ring {
-            background-position: center;
       background-image: url(../img/ico/header-ico--ring.png);
+      background-position: center;
       &:hover {
         background-image: url(../img/ico/header-ico--ring-h.png);
       }
@@ -222,7 +221,8 @@ background-position: center top;
     }
   }
   .header-account {
-    padding-top: 15px;
+    padding-top: 12px;
+    padding-left: 0;
     .header-account--avatar {
       position: relative;
 
@@ -269,12 +269,12 @@ nav {
 }
 .header-after {
   height: 96px;
-  padding-top: 25px;
+  padding-top: 23px;
 
   background-color: $gray;
   background-position: top;
 
-  header-afterbackground-repeat: repeat-x;
+
   h6 {
     font-size: 18px;
     font-weight: 300;
@@ -348,6 +348,7 @@ nav {
         position: absolute;
         z-index: 2;
         top: 0;
+          margin-right: 15px;
         right: 0;
         bottom: 0;
 
@@ -360,8 +361,8 @@ nav {
       display: block;
 
       width: 220px;
-      height: 145px;
-      padding-top: 95px;
+      height: 150px;
+      padding-top: 115px;
 
       text-align: center;
 
@@ -369,7 +370,7 @@ nav {
       background-color: $blue;
       background-image: url(../img/bg/home-search--how-button.png);
       background-repeat: no-repeat;
-      background-position: center 25px;
+      background-position: center 30px;
       span {
         font-size: 14px;
         font-weight: 300;
@@ -444,7 +445,7 @@ nav {
   }
   .popular-cats--more {
     margin-bottom: 65px;
-    padding-top: 20px;
+padding-top: 28px;
     .btn {
       display: block;
 
@@ -456,7 +457,7 @@ nav {
   }
 }
 .topg {
-  padding-top: 45px;
+  padding-top: 50px;
   padding-bottom: 45px;
 
   background-color: $gray;
@@ -464,7 +465,7 @@ nav {
     font-size: 32px;
     font-weight: 300;
 
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 
     text-align: center;
     span {
@@ -525,7 +526,7 @@ nav {
     font-weight: normal;
 
     float: left;
-
+padding-left: 5px;
     width: 229px;
     height: 90px;
     .topg--item-nname {
@@ -543,7 +544,7 @@ nav {
     .topg--item-status {
       display: block;
 
-      padding-top: 5px;
+      padding-top: 10px;
       span {
         font-size: 12px;
         font-weight: normal;
@@ -584,9 +585,9 @@ nav {
 
       width: 22px;
       height: 46px;
-      margin-right: 30px;
+      margin-right: 20px;
       margin-bottom: 10px;
-      margin-left: 20px;
+      margin-left: 30px;
       span {
         position: absolute;
         bottom: 0;
@@ -670,7 +671,7 @@ nav {
     font-size: 16px;
     font-weight: normal;
 
-    padding-top: 15px;
+
 
     text-align: center;
     a {
@@ -718,7 +719,7 @@ nav {
     font-size: 32px;
     font-weight: 300;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 
     text-align: center;
     span {
@@ -730,7 +731,7 @@ nav {
 
     min-height: 75px;
     margin-bottom: 25px;
-    padding: 20px 20px 20px 75px;
+    padding: 10px 20px 10px 75px;
 
     transition: all .5s;
 
@@ -770,9 +771,8 @@ nav {
 
       position: absolute;
       top: 50%;
-      right: 0;
-
-      margin-top: -18px;
+  right: -12px;
+  margin-top: -22px;
       padding-right: 15px;
 
       text-align: right;
@@ -803,7 +803,7 @@ nav {
   }
 }
 .create-account {
-  padding-top: 50px;
+  padding-top: 45px;
   padding-bottom: 50px;
 
   text-align: center;
@@ -814,13 +814,13 @@ nav {
     font-size: 32px;
     font-weight: 300;
 
-    margin-bottom: 24px;
+    margin-bottom:15px;
   }
   .create-account--subtitle {
     font-size: 18px;
     font-weight: 300;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   .create-account--href {
     text-align: center;
@@ -844,15 +844,15 @@ nav {
     font-size: 32px;
     font-weight: 300;
 
-    margin-bottom: 60px;
+    margin-bottom: 45px;
     span {
       font-weight: 500;
     }
   }
   .countersg--item {
     &.countersg--item-w {
-      padding-right: 30px;
-      padding-left: 30px;
+      padding-right: 35px;
+      padding-left: 35px;
     }
     h6 {
       font-size: 18px;
@@ -867,11 +867,11 @@ nav {
       display: block;
 
       margin-bottom: 6px;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
 
-      border-top: 6px solid $orange;
-      border-bottom: 6px solid $orange;
+      border-top: 3px solid $orange;
+      border-bottom: 3px solid $orange;
     }
     .countersg--action {
       display: block;
