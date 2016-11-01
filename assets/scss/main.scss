@@ -184,6 +184,7 @@ header {
   }
   .header-ico {
     padding-top: 23px;
+    padding-right: 20px;
 
     @extend .justify-child;
     .header-ico--ring,
@@ -191,16 +192,17 @@ header {
     .header-ico--book {
       display: inline-block;
 
-      width: 16px;
-      height: 16px;
+      width: 17px;
+      height: 17px;
 
       cursor: pointer;
 
       background-color: cover;
       background-repeat: no-repeat;
-      background-position: center;
+background-position: center top;
     }
     .header-ico--ring {
+            background-position: center;
       background-image: url(../img/ico/header-ico--ring.png);
       &:hover {
         background-image: url(../img/ico/header-ico--ring-h.png);
@@ -524,7 +526,7 @@ nav {
 
     float: left;
 
-    width: 235px;
+    width: 229px;
     height: 90px;
     .topg--item-nname {
       color: $gray-dark;
