@@ -69,6 +69,18 @@ $(document).ready(function() {
     });
   });
 
+  // show phone button
+  $('.btn-showphone').on('click', function(e) {
+    var phone = $(this).attr('data-phone');
+    $(this).html(phone);
+    $(this).addClass('btn-showphone-s')
+  })
+
+  $('.widget--contact-m span').on('click', function(e) {
+    $(this).fadeOut('fast');
+    $(this).parent('li').children('a').fadeIn('fast');
+  })
+
 });
 // autocomplete
 $(function() {
