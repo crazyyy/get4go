@@ -32,7 +32,8 @@ body {
   background-color: $base-background-color;
 
   -webkit-font-smoothing: antialiased;
-  &.category-l {
+  &.category-l,
+  &.page-l {
     background-color: $gray;
   }
 }
@@ -304,7 +305,7 @@ nav {
     }
   }
 }
-.header-title {
+.header--title {
   height: 95px;
   margin-bottom: 20px;
   padding-top: 30px;
@@ -325,6 +326,21 @@ nav {
 
     width: 190px;
     height: 40px;
+  }
+}
+.header--pagetitle {
+  height: 95px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+
+  background-color: #fff;
+  h6 {
+    font-size: 32px;
+    font-weight: 300;
+
+    color: $blue;
+
+    @extend .clearfix;
   }
 }
 .home-search {
@@ -1322,6 +1338,8 @@ nav {
   form,
   select {
     height: 40px;
+
+    background-color: #fff;
   }
   form {
     float: left;
@@ -1510,7 +1528,8 @@ aside {
 
           margin-left: 5px;
           padding: 5px;
-border-radius: $base-border-radius;
+
+          border-radius: $base-border-radius;
           background-color: $orange;
         }
       }
