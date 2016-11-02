@@ -5,7 +5,14 @@
 @import 'import/lists';
 @import 'import/tables';
 @import 'import/mixin';
-@import 'import/wordpress';
+// @import 'import/wordpress';
+
+@import 'slick/slick';
+@import 'slick/slick-theme';
+
+@import 'tooltipster.bundle';
+@import 'tooltipster.core';
+@import 'tooltipster-shadow';
 
 // http://sorgalla.com/lity/
 @import 'lity';
@@ -678,7 +685,7 @@ nav {
         background-color: $green;
       }
       .topg--item-chart-n {
-        left: 8px;
+        left: 9px;
 
         height: 0;
 
@@ -739,24 +746,22 @@ nav {
       }
     }
   }
-  .topg--item-more {
-    font-size: 16px;
-    font-weight: normal;
-
-    text-align: center;
-    a {
-      color: $blue;
-      &:hover {
-        text-decoration: none;
-
-        border-bottom: 2px solid $orange;
-      }
-    }
-  }
   &:hover {
     transform: scale(.98);
 
     border: 2px solid $orange;
+  }
+}
+.topg--item-more {
+  font-size: 16px;
+  font-weight: normal;
+
+  text-align: center;
+  a {
+    color: $blue;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 .topg--item-lister {
@@ -807,6 +812,9 @@ nav {
       padding-top: 8px;
 
       color: $gray-dark;
+      &.topg--item-sname {
+        display: inline;
+      }
     }
     .topg--item-available {
       font-size: 12px;
@@ -1559,6 +1567,40 @@ nav {
       background-color: #f1f5f8;
     }
   }
+  .profile--pholio-slide {
+    position: relative;
+
+    height: 105px;
+    button {
+      position: absolute;
+      z-index: 1;
+      top: 52px;
+      bottom: 0;
+
+      width: 40px;
+      height: 105px;
+
+      border-radius: 0;
+      background-color: #e5eaee;
+      background-repeat: no-repeat;
+      background-position: center;
+      &:before {
+        display: none;
+      }
+      &.slick-next {
+        right: 0;
+
+        background-image: url(../img/ico/slick-next.png);
+      }
+      &.slick-prev {
+        left: 0;
+
+        display: none !important;
+
+        background-image: url(../img/ico/slick-prev.png);
+      }
+    }
+  }
   .profile--docs {
     ul {
       width: 100%;
@@ -1599,6 +1641,8 @@ nav {
           }
         }
         &:last-child {
+          text-align: center;
+
           background-image: none;
           a {
             padding-left: 0;
@@ -1823,6 +1867,7 @@ aside {
           float: right;
 
           width: 165px;
+          margin-bottom: 4px;
         }
         .widget--recomend-name {
           font-size: 14px;
@@ -1985,7 +2030,6 @@ aside {
         height: 45px;
 
         border-radius: 50%;
-
       }
     }
     .widget--rating-ratio {

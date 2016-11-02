@@ -81,7 +81,7 @@ $(document).ready(function() {
     $(this).parent('li').children('a').fadeIn('fast');
   })
 
-// rating on product page
+  // rating on product page
   $('.widget--rating').each(function(index, el) {
 
 
@@ -127,6 +127,18 @@ $(document).ready(function() {
     });
   });
 
+  $('.profile--pholio-slide').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 3,
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-next"></button>',
+  });
+
+  $('.tooltip').tooltipster({
+    theme: 'tooltipster-shadow'
+  });
 });
 // autocomplete
 $(function() {
