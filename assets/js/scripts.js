@@ -81,6 +81,52 @@ $(document).ready(function() {
     $(this).parent('li').children('a').fadeIn('fast');
   })
 
+// rating on product page
+  $('.widget--rating').each(function(index, el) {
+
+
+
+    var feedbackPositive = parseInt($(this).find('.widget--rating-reviews-p').html());
+    var feedbackNeutral = parseInt($(this).find('.widget--rating-reviews-n').html());
+    var feedbackNegative = parseInt($(this).find('.widget--rating-reviews-m').html());
+
+    // find max point of reviews
+    var maxPoint = Math.max(feedbackPositive, feedbackNeutral, feedbackNegative);
+    // find each point in % from max point
+    var percentPositive = parseFloat(((feedbackPositive / maxPoint) * 100).toFixed(2));
+    var percentNeutral = parseFloat(((feedbackNeutral / maxPoint) * 100).toFixed(2));
+    var percentNegative = parseFloat(((feedbackNegative / maxPoint) * 100).toFixed(2));
+    // set height in percent for each elements
+    $(this).find('.widget--rating-chart-p').css('height', percentPositive + '%');
+    $(this).find('.widget--rating-chart-n').css('height', percentNeutral + '%');
+    $(this).find('.widget--rating-chart-m').css('height', percentNegative + '%');
+
+    // find sum of neutral and negative reviews for circle chart
+    var sumPoints = feedbackPositive + feedbackNeutral + feedbackNegative;
+    var posPoints = feedbackPositive + feedbackNeutral;
+    var sumPointsPerc = parseFloat(((posPoints / sumPoints) * 100).toFixed(1));
+
+    //** circles https://github.com/lugolabs/circles */
+    var myCircle = Circles.create({
+      id: 'circles',
+      radius: 22,
+      value: sumPointsPerc,
+      maxValue: 100,
+      width: 3,
+      text: function(value) {
+        return value;
+      },
+      colors: ['#93a2b3', '#f5b635'],
+      duration: 600,
+      wrpClass: 'circles-wrp',
+      textClass: 'circles-text',
+      valueStrokeClass: 'circles-valueStroke',
+      maxValueStrokeClass: 'circles-maxValueStroke',
+      styleWrapper: true,
+      styleText: true
+    });
+  });
+
 });
 // autocomplete
 $(function() {
