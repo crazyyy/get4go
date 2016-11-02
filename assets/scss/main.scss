@@ -1369,6 +1369,300 @@ nav {
     color: $blue;
   }
 }
+.profile--head {
+  padding: 20px;
+
+  border: 1px solid #e1ebed;
+  border-radius: $base-border-radius $base-border-radius 0 0;
+  background-color: #fff;
+
+  @extend .clearfix;
+  .profile--head-ava {
+    position: relative;
+
+    display: block;
+    float: left;
+    overflow: hidden;
+
+    width: 120px;
+    height: 120px;
+    margin: 0 20px 0 0;
+    img {
+      min-width: 100%;
+      min-height: 100%;
+
+      @extend .align-center;
+    }
+  }
+  .profile--head-middle {
+    float: left;
+
+    width: 239px;
+    height: 100%;
+    .profile--head-city {
+      font-size: 14px;
+      font-weight: normal;
+
+      display: block;
+
+      margin-bottom: 15px;
+
+      color: $orange;
+    }
+    .profile--head-type {
+      font-size: 14px;
+      font-weight: normal;
+
+      color: #93a2b3;
+    }
+    .profile--head-name {
+      font-size: 18px;
+      font-weight: normal;
+
+      margin-bottom: 30px;
+    }
+    .profile--head-status {
+      display: inline-block;
+
+      height: 25px;
+      margin-right: 25px;
+      padding: 4px 5px;
+
+      color: #fff;
+      border-radius: $base-border-radius;
+      background-color: $green;
+    }
+    .profile--head-ask {
+      line-height: 1.8;
+
+      position: relative;
+      top: 0;
+
+      display: inline-block;
+
+      height: 25px;
+      padding-left: 35px;
+
+      cursor: pointer;
+
+      background-image: url(../img/ico/profile--head-ask.png);
+      background-repeat: no-repeat;
+      background-position: left top;
+    }
+  }
+  .profile--head-right {
+    position: relative;
+
+    float: right;
+
+    width: 219px;
+    height: 100%;
+    .profile--head-price {
+      font-size: 18px;
+      font-weight: normal;
+
+      display: block;
+
+      margin-bottom: 60px;
+      padding-left: 18px;
+    }
+    .profile--head-offer {
+      width: 100%;
+      height: 40px;
+
+      color: $blue;
+      background-color: #f1f5f8;
+
+      @extend .btn;
+      &:hover {
+        color: $blue;
+        border-bottom: 2px solid darken(#e5eaee, 15%);
+        background-color: darken(#f1f5f8, 10%);
+      }
+    }
+    .profile--head-fav {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      display: block;
+
+      width: 30px;
+      height: 30px;
+
+      cursor: pointer;
+
+      border-radius: 50%;
+      background-image: url(../img/ico/topg--item-fav.png);
+      background-position: center;
+      &:hover {
+        background-image: url(../img/ico/topg--item-fav-h.png);
+      }
+    }
+  }
+}
+.profile {
+  .profile--about,
+  .profile--services,
+  .profile--docs,
+  .profile--pholio,
+  .profile--reviews {
+    padding: 20px;
+
+    border: 1px solid #e1ebed;
+    border-top: 0;
+    background-color: #fff;
+    h5 {
+      font-size: 18px;
+
+      margin-bottom: 15px;
+
+      color: $blue;
+    }
+  }
+  .profile--about {
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 18px;
+
+      color: $blue;
+    }
+  }
+  .profile--services {
+    span,
+    a {
+      display: inline-block;
+
+      margin: 0 4px 0 0;
+      padding: 4px;
+
+      color: $blue;
+      background-color: #f1f5f8;
+    }
+  }
+  .profile--docs {
+    ul {
+      width: 100%;
+
+      @extend .clearfix;
+      li {
+        line-height: 4.5;
+
+        display: inline-block;
+        float: left;
+
+        width: 24.5%;
+        height: 61px;
+        margin-right: .5%;
+
+        color: #b8c2ce;
+        border-radius: $base-border-radius;
+        background-color: #f1f5f8;
+        background-image: url(../img/ico/profile--docs.png);
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        a {
+          display: block;
+
+          width: 100%;
+          height: 100%;
+          padding-left: 50px;
+
+          text-decoration: none;
+
+          color: #b8c2ce;
+        }
+        &:hover {
+          a {
+            text-decoration: none;
+
+            color: #b8c2ce;
+          }
+        }
+        &:last-child {
+          background-image: none;
+          a {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+  .profile--reviews {
+    .profile--reviews-item {
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      border-top: 1px solid #e1ebed;
+      .profile--reviews-title {
+        font-size: 18px;
+
+        margin-bottom: 20px;
+
+        color: #93a2b3;
+
+        @extend .clearfix;
+        span {
+          float: right;
+        }
+      }
+      .profile--reviews-content {
+        position: relative;
+
+        padding-left: 50px;
+        .profile--reviews-ava,
+        .profile--reviews-type {
+          position: absolute;
+          left: 0;
+
+          display: block;
+
+          width: 32px;
+          height: 32px;
+
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .profile--reviews-ava {
+          top: 0;
+        }
+        .profile--reviews-type {
+          top: 40px;
+          &.profile--reviews-type-p {
+            background-image: url(../img/ico/profile--reviews-type-p.png);
+          }
+          &.profile--reviews-type-m {
+            background-image: url(../img/ico/profile--reviews-type-m.png);
+          }
+          &.profile--reviews-type-n {
+            background-image: url(../img/ico/profile--reviews-type-n.png);
+          }
+        }
+        p {
+          font-size: 14px;
+          font-weight: 300;
+          font-style: italic;
+
+          position: relative;
+
+          padding: 13px 22px;
+
+          border-radius: $base-border-radius $base-border-radius 0 0;
+          background-color: #f1f5f8;
+          &:before {
+            position: absolute;
+            top: 5px;
+            left: -8px;
+
+            @include triangle(16px 8px, #f1f5f8, left);
+            @extend .dblock;
+          }
+        }
+      }
+    }
+  }
+}
 .pagination {
   margin: 0 0 38px;
   padding: 20px 0 0;
@@ -1533,6 +1827,33 @@ aside {
           background-color: $orange;
         }
       }
+    }
+  }
+  .widget--contact {
+    h6 {
+      border: 0;
+    }
+    .btn-showphone {
+      width: 238px;
+      margin-bottom: 25px;
+      height: 45px;
+      padding-top: 5px;
+      font-size: 18px;
+      font-weight: 600;
+      color: $blue;
+      margin-right: 20px;
+      i {
+        margin-right: 5px;
+        position: relative;
+        top: 4px;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/ico/btn-showphone-i.png);
+      }
+      margin-left: 20px;
     }
   }
 }
