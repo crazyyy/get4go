@@ -304,6 +304,29 @@ nav {
     }
   }
 }
+.header-title {
+  height: 95px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+
+  background-color: #fff;
+  h6 {
+    font-size: 32px;
+    font-weight: 300;
+
+    color: $blue;
+
+    @extend .clearfix;
+  }
+  .btn {
+    font-size: 16px;
+
+    float: right;
+
+    width: 190px;
+    height: 40px;
+  }
+}
 .home-search {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -821,33 +844,45 @@ nav {
       width: 100%;
       margin-bottom: 20px;
     }
+    .topg--item-circle {
+      float: left;
+
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
     .topg--item-chart {
       position: relative;
+      top: 6px;
 
       float: left;
 
-      width: 22px;
-      height: 50px;
-
+      width: 45px;
+      height: 44px;
+      margin-right: 10px;
       margin-bottom: 10px;
+      &:before {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
 
+        height: 3px;
+
+        background-color: $gray;
+
+        @extend .dblock;
+      }
       span {
         position: absolute;
-        bottom: 0;
+        bottom: 6px;
 
         display: block;
 
         width: 4px;
       }
-      .topg--item-circle {
-        float: left;
-
-        width: 50px;
-        height: 50px;
-        margin-bottom: 10px;
-      }
       .topg--item-chart-p {
-        left: 0;
+        left: 12px;
 
         height: 0;
 
@@ -856,7 +891,7 @@ nav {
         background-color: $green;
       }
       .topg--item-chart-n {
-        left: 8px;
+        left: 21px;
 
         height: 0;
 
@@ -865,7 +900,7 @@ nav {
         background-color: $orange;
       }
       .topg--item-chart-m {
-        right: 0;
+        right: 11px;
 
         height: 0;
 
@@ -882,10 +917,17 @@ nav {
       width: 100px;
       height: 50px;
 
-      text-align: center;
+      text-align: left;
 
       color: #93a2b3;
-      border-top: 1px solid #93a2b3;
+      .topg--item-reviews-nam {
+        display: block;
+
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+
+        border-bottom: 1px solid #93a2b3;
+      }
       .topg--item-reviews-p {
         color: $green;
       }
@@ -911,12 +953,109 @@ nav {
       }
     }
   }
+  .topg--item-ofer {
+    font-size: 12px;
+    font-weight: normal;
+
+    width: 100%;
+    height: 30px;
+    padding-top: 8px;
+
+    color: $blue;
+    border-bottom: 2px solid #e5eaee;
+    background-color: $gray;
+    &:hover {
+      border-bottom: 2px solid #b78727;
+      background-color: $orange;
+    }
+  }
+  .topg--item-fav {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+    background-image: url(../img/ico/topg--item-fav.png);
+    background-position: center;
+    &:hover {
+      background-image: url(../img/ico/topg--item-fav-h.png);
+    }
+  }
   &:hover {
     // transform: scale(.98);
     border: 2px solid $orange;
   }
 }
+.lister-task {
+  padding: 20px;
 
+  border: 1px solid $gray-light;
+  border-top: 0;
+  background-color: #fff;
+
+  @extend .clearfix;
+  .lister-task-descr {
+    float: left;
+
+    width: 365px;
+    .lister-task-title {
+      font-size: 18px;
+
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 14px;
+      font-weight: normal;
+
+      margin-bottom: 0;
+      padding-right: 5px;
+
+      color: #93a2b3;
+    }
+  }
+  .lister-task-info {
+    float: right;
+
+    width: 230px;
+    padding-left: 8px;
+    .lister-task-price {
+      font-size: 18px;
+
+      margin-bottom: 12px;
+    }
+    .lister-task-status {
+      display: inline-block;
+
+      margin-bottom: 10px;
+      padding: 3px 5px;
+
+      color: #fff;
+      border-radius: $base-border-radius;
+      background-color: $blue;
+      &.lister-task-status-on {
+        background-color: $green;
+      }
+      &.lister-task-status-off {
+        background-color: #93a2b3;
+      }
+    }
+    .lister-task-due {
+      display: block;
+
+      color: #93a2b3;
+      .lister-task-due-a {
+        color: $red;
+      }
+    }
+  }
+}
 .addg {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -1190,14 +1329,19 @@ nav {
     width: 300px;
     input {
       height: 100%;
+      padding-left: 30px;
 
+      background-image: url(../img/ico/searchsort-input.png);
+      background-repeat: no-repeat;
+      background-position: 10px center;
       box-shadow: none;
     }
   }
   input,
   select {
     color: $gray-light;
-    border-radius: $base-border-radius;
+    border-color: $gray-light;
+    border-radius: $base-border-radius;;
   }
   select {
     float: right;
@@ -1207,7 +1351,172 @@ nav {
     color: $blue;
   }
 }
+.pagination {
+  margin: 0 0 38px;
+  padding: 20px 0 0;
+  nav {
+    display: block;
 
+    padding: 15px 20px;
+
+    border-radius: $base-border-radius;
+    background-color: #fff;
+    span,
+    a {
+      line-height: 2;
+
+      display: inline-block;
+
+      height: 25px;
+      padding: 0 10px;
+      &.pagination-current {
+        cursor: default;
+
+        background-color: $orange;
+      }
+    }
+    a {
+      color: $blue;
+    }
+  }
+}
+aside {
+  .widget {
+    margin: 0 0 20px;
+    padding: 0;
+
+    border: 1px solid #e5eaee;
+    background-color: #fff;
+    h6 {
+      font-size: 18px;
+
+      margin: 0;
+      padding: 20px 0;
+
+      text-align: center;
+
+      color: $blue;
+      border-bottom: 1px solid #e5eaee;
+    }
+  }
+  .widget--servicecat {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        position: relative;
+
+        display: block;
+
+        padding: 20px 60px 20px 65px;
+
+        border-bottom: 1px solid #e5eaee;
+        &:last-child {
+          border-bottom: 0;
+        }
+        a {
+          color: $blue;
+        }
+        .widget--servicecat-img {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 20px;
+
+          display: block;
+
+          width: 40px;
+          height: 100%;
+          margin: 0;
+          img {
+            @extend .align-center;
+          }
+        }
+        .widget--servicecat-count {
+          position: absolute;
+          top: 0;
+          right: 20px;
+          bottom: 0;
+
+          display: flex;
+
+          width: 60px;
+          height: 100%;
+
+          text-align: right;
+
+          color: #93a2b3;
+
+          justify-content: flex-end;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .widget--recomend {
+    a {
+      text-decoration: none;
+
+      color: $blue;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        padding: 20px;
+
+        border-bottom: 1px solid #e5eaee;
+
+        @extend .clearfix;
+        &:last-child {
+          border-bottom: 0;
+        }
+        .widget--recomend-ava {
+          display: inline-block;
+          float: left;
+          overflow: hidden;
+
+          width: 65px;
+          height: 65px;
+          margin-right: 5px;
+          img {
+            min-width: 100%;
+            min-height: 100%;
+          }
+        }
+        .widget--recomend-name,
+        .widget--recomend-price {
+          display: inline-block;
+          float: right;
+
+          width: 165px;
+        }
+        .widget--recomend-name {
+          font-size: 14px;
+          span {
+            color: #93a2b3;
+          }
+        }
+        .widget--recomend-price {
+          font-size: 18px;
+        }
+        .widget--recomend-tag {
+          font-size: 12px;
+
+          display: inline-block;
+
+          margin-left: 5px;
+          padding: 5px;
+border-radius: $base-border-radius;
+          background-color: $orange;
+        }
+      }
+    }
+  }
+}
 section {
   padding: 0 0 $footer;
 }
