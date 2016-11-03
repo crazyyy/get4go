@@ -2246,6 +2246,70 @@ article {
   @extend .clearfix;
 }
 
+.tooltip_templates {
+  display: none;
+}
+#topg--item-charts,
+#topg--item-reviews {
+  display: inline-block;
+
+  padding: 15px;
+
+  border-radius: $base-border-radius;
+  background-color: #fff;
+  li {
+    font-size: 12px;
+    font-weight: normal;
+
+    position: relative;
+
+    padding-left: 15px;
+
+    color: #0e2c4b;
+    &:before {
+      position: absolute;
+      top: 2px;
+      left: 0;
+
+      width: 10px;
+      height: 10px;
+      margin-bottom: 15px;
+
+      @extend .dblock;
+    }
+    &:first-child {
+      margin-bottom: 10px;
+      padding-left: 0;
+    }
+    &:nth-child(2) {
+      &:before {
+        background-color: $green;
+      }
+    }
+    &:nth-child(3) {
+      &:before {
+        background-color: $orange;
+      }
+    }
+    &:nth-child(4) {
+      margin-bottom: 0;
+      &:before {
+        background-color: $red;
+      }
+    }
+  }
+}
+#topg--item-reviews {
+  li {
+    &:nth-child(3) {
+      &:before {
+        background-color: #93a2b3;
+      }
+    }
+  }
+}
+
+
 footer {
   height: auto;
   /* margin: $footer_margin auto 0; */
